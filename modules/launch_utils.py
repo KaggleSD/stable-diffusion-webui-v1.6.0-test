@@ -427,12 +427,20 @@ def configure_for_tests():
 
     os.environ['COMMANDLINE_ARGS'] = ""
 
-
+dead = '''
+=================项目停更通知===================
+由于家庭原因，我现在暂时不得不放弃Kaggle云端部署项目。
+项目至今快一年了，也免费用了Kaggle的显卡一年了，相信大家在这一年里，也收获了不少快乐，节省了不少显卡和电费钱
+但是最近本人已经没有太多的精力，我觉得我也是时候退出AI绘画这个圈子了
+再见吧，有缘再会！
+              2023年10月30日 NYAN9 
+              QQ群632428790
+'''
 def start():
     print(f"Launching {'API server' if '--nowebui' in sys.argv else 'Web UI'} with arguments: {' '.join(sys.argv[1:])}")
     import webui
     if '--nowebui' in sys.argv:
-        webui.api_only()
+        print('项目停更通知')
     else:
         webui.webui()
 
